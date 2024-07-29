@@ -47,7 +47,8 @@ class InputText(PageElement):
                                        '.shadowRoot.querySelector("%s")'
                                        '.value = "%s"' % (self.shadowroot, self.locator[1], value))
         else:
-            self.web_element.send_keys(value)
+            self.web_element.set_text(value)
+            # self.web_element.send_keys(value)
 
     def clear(self):
         """Clear the element value
