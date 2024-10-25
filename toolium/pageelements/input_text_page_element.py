@@ -40,7 +40,7 @@ class InputText(PageElement):
         :param value: value to be set
         """
         if self.driver_wrapper.is_ios_test() and not self.driver_wrapper.is_web_test():
-            self.web_element.set_value(value)
+            self.web_element.send_keys(value)
         elif self.shadowroot:
             value = value.replace("\"", "\\\"")
             self.driver.execute_script('return document.querySelector("%s")'
